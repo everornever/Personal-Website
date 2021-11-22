@@ -57,7 +57,6 @@ html {
 
 header {
   height: 115px;
-  background-color: rebeccapurple;
 }
 
 body {
@@ -69,11 +68,12 @@ body {
 }
 
 section {
+  text-align: center;
+  height: 100%;
   background-color: var(--container-color);
 }
 
 footer {
-  background-color: yellowgreen;
 }
 
 h1,
@@ -112,24 +112,6 @@ img {
   width: 100%;
   grid-column: 1 / 4;
 }
-
-/*==================== NAV ====================*/
-
-/*==================== HOME ====================*/
-
-/*==================== BUTTONS ====================*/
-
-/*==================== ABOUT ====================*/
-
-/*==================== SKILLS ====================*/
-
-/*==================== PORTFOLIO ====================*/
-
-/*==================== CONTACT ME ====================*/
-
-/*==================== FOOTER ====================*/
-
-/*========== SCROLL BAR ==========*/
 
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
