@@ -6,6 +6,7 @@
   /*========== Colors ==========*/
   --body-color: #02021e;
   --text-color: rgb(0, 0, 0);
+  --text-color-light: #edf6f9;
   --title-color: #fff;
 
   --first-color: rgb(0, 0, 0);
@@ -13,7 +14,6 @@
   --first-color-alt: #fff;
   --first-color-lighter: #fff;
 
-  --text-color-light: #fff;
   --input-color: #fff;
   --container-color: rgb(255, 0, 0);
   --scroll-bar-color: #fff;
@@ -23,6 +23,7 @@
   --body-font: "Roboto", sans-serif;
 
   /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --huge-font-size: 5rem;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -91,10 +92,6 @@ h5 {
   color: var(--title-color);
 }
 
-h5 {
-  font-weight: 300;
-}
-
 ul {
   list-style: none;
 }
@@ -128,6 +125,58 @@ button {
 .full-bleed {
   width: 100%;
   grid-column: 1 / 4;
+}
+
+/*==================== Intro Section ====================*/
+
+.intro {
+}
+
+.intro_container {
+  row-gap: 3rem;
+}
+
+.intro_title {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-bold);
+  letter-spacing: 3px;
+  margin-bottom: var(--mb-0-75);
+}
+
+.intro_subtitle {
+  margin-bottom: var(--mb-25);
+  font-weight: var(--font-light);
+  color: rgb(161, 161, 161);
+}
+
+.intro_name {
+  margin-bottom: var(--mb-2);
+  font-weight: var(--font-black);
+  font-size: var(--huge-font-size);
+}
+
+.color_animation {
+  animation: flow 5s ease-in-out infinite;
+  background: linear-gradient(-60deg, #64e664, #904e95, #e73c7e, #ee7752);
+  background-size: 300%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes flow {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
 }
 
 /*==================== MEDIA QUERIES ====================*/
