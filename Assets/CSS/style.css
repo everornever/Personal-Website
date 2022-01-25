@@ -5,7 +5,8 @@
 :root {
   /*========== Colors ==========*/
   --body-color: #02021e;
-  --text-color: rgb(0, 0, 0);
+  --text-color: rgb(255, 255, 255);
+  --text-color-light: #edf6f9;
   --title-color: #fff;
 
   --first-color: rgb(0, 0, 0);
@@ -13,7 +14,6 @@
   --first-color-alt: #fff;
   --first-color-lighter: #fff;
 
-  --text-color-light: #fff;
   --input-color: #fff;
   --container-color: rgb(255, 0, 0);
   --scroll-bar-color: #fff;
@@ -23,6 +23,7 @@
   --body-font: "Roboto", sans-serif;
 
   /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --huge-font-size: 5rem;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -83,16 +84,19 @@ section {
   padding: 6.5rem 0 1rem;
 }
 
+.section_title,
+.section_title-center {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  margin-bottom: var(--mb-1);
+}
+
 h1,
 h2,
 h3,
 h4,
 h5 {
   color: var(--title-color);
-}
-
-h5 {
-  font-weight: 300;
 }
 
 ul {
@@ -128,6 +132,96 @@ button {
 .full-bleed {
   width: 100%;
   grid-column: 1 / 4;
+}
+
+/*==================== INTRO  SECTION ====================*/
+.intro_container {
+  row-gap: 3rem;
+}
+
+.intro_greeting {
+  margin-bottom: var(--mb-25);
+  font-weight: var(--font-regular);
+  letter-spacing: 2px;
+}
+
+.intro_title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-bold);
+  letter-spacing: 3px;
+  margin-bottom: var(--mb-0-75);
+}
+
+.intro_name {
+  margin-bottom: var(--mb-1);
+  font-weight: var(--font-black);
+  font-size: var(--huge-font-size);
+}
+
+.color_animation {
+  animation: flow 5s ease-in-out infinite;
+  background: linear-gradient(105deg, #ef478d, #ffd166, #06d6a0, #118ab2);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes flow {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.intro_subtitle {
+  margin-bottom: var(--mb-25);
+  font-weight: var(--font-light);
+  color: rgb(161, 161, 161);
+}
+
+/*==================== ABOUT SECTION ====================*/
+.about_container {
+  gap: 2.5rem;
+}
+
+.about_text {
+  font-weight: var(--font-light);
+}
+
+/*==================== PROJECT SECTION ====================*/
+
+.project_container {
+  gap: 2.5rem;
+}
+
+.project-box-wrapper {
+  display: grid;
+}
+
+.project-box {
+  height: 100px;
+  background-color: #ef478d;
+  border: #ffd166;
+  border-width: 2px;
+  border-radius: 5px;
+}
+
+.project-title {
+}
+
+.project-subtitle {
+}
+
+.tech-img-group {
+}
+
+.tech-img {
 }
 
 /*==================== MEDIA QUERIES ====================*/
