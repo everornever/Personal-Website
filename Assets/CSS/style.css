@@ -1,28 +1,12 @@
 /*==================== GOOGLE FONTS ====================*/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap");
 
 /*==================== VARIABLES CSS ====================*/
 :root {
   /*========== Colors ==========*/
-  --body-color: #000000;
-  --text-color: rgb(0, 0, 0);
-  --text-color-light: #edf6f9;
-  --title-color: #fff;
-
-  --first-color: rgb(0, 0, 0);
-  --first-color-second: #fff;
-  --first-color-alt: #fff;
-  --first-color-lighter: #fff;
-
-  --input-color: #fff;
-  --container-color: rgb(255, 0, 0);
-  --scroll-bar-color: #fff;
-  --scroll-bar-thumb: #fff;
+  --body-color: #005716;
+  --text-color: #fff;
 
   /*========== Font and typography ==========*/
-  --body-font: "Roboto", sans-serif;
-
-  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
   --huge-font-size: 5rem;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
@@ -38,21 +22,6 @@
   --font-regular: 400;
   --font-bold: 700;
   --font-black: 900;
-
-  /*========== Margenes Bottom ==========*/
-  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
-  --mb-0-25: 0.25rem;
-  --mb-0-5: 0.5rem;
-  --mb-0-75: 0.75rem;
-  --mb-1: 1rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  --mb-2-5: 2.5rem;
-  --mb-3: 3rem;
-
-  /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
 }
 
 /*==================== BASE ====================*/
@@ -66,77 +35,33 @@ html {
   scroll-behavior: smooth;
 }
 
-body,
-button,
-input {
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-}
-
 body {
-  margin: 0;
+  margin: 0px;
   background-color: var(--body-color);
   color: var(--text-color);
 }
 
-section {
-  height: 100%;
-  padding: 6.5rem 0 1rem;
-}
-
-.section_title,
-.section_title-center {
-  font-size: var(--h2-font-size);
-  color: var(--title-color);
-  margin-bottom: var(--mb-1);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: var(--title-color);
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
-
-/*==================== LAYOUT ====================*/
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr min(60ch, calc(100% - 64px)) 1fr;
-  grid-column-gap: 32px;
-}
-
-.wrapper > * {
-  grid-column: 2;
-}
-
-.full-bleed {
+/*==================== TABLE ====================*/
+table {
+  position: absolute;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-style: hidden;
   width: 100%;
-  grid-column: 1 / 4;
+  height: 100%;
+  text-align: center;
 }
 
-/*==================== INTRO  SECTION ====================*/
-.intro_container {
-  row-gap: 3rem;
+table td {
+  border: 1px solid black;
+}
+
+.side_columns {
+  width: 20px;
+}
+
+.empty_row {
+  height: 50px;
 }
 
 /*==================== MEDIA QUERIES ====================*/
