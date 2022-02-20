@@ -3,18 +3,12 @@
 /*==================== VARIABLES CSS ====================*/
 :root {
   /*========== Colors ==========*/
-  --body-color: #005716;
-  --text-color: #fff;
+  --background: #344537;
+  --text-color: #d09755;
 
   /*========== Font and typography ==========*/
-  --huge-font-size: 5rem;
-  --big-font-size: 2rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1.125rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
+  font: Helvetica Neue;
+  text-transform: uppercase;
 
   /*========== Font weight ==========*/
   --font-thin: 100;
@@ -37,8 +31,12 @@ html {
 
 body {
   margin: 0px;
-  background-color: var(--body-color);
+  background-color: var(--background);
   color: var(--text-color);
+}
+
+h1 {
+  display: inline;
 }
 
 /*==================== TABLE ====================*/
@@ -49,11 +47,12 @@ table {
   border-style: hidden;
   width: 100%;
   height: 100%;
-  text-align: center;
+  background: url(/Assets/SVG/grain.svg);
 }
 
 table td {
-  border: 1px solid black;
+  border: 1px solid var(--text-color);
+  padding: 20px;
 }
 
 .side_columns {
@@ -62,6 +61,48 @@ table td {
 
 .empty_row {
   height: 50px;
+}
+
+.titel_cell {
+  height: 90px;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.globe_icon {
+  font-size: 15rem;
+}
+
+.center_cell {
+  height: 318px;
+  text-align: center;
+}
+
+.bottom_cell {
+  height: 182px;
+}
+
+.rotate {
+  transform: rotate(-90deg);
+
+  /* Legacy vendor prefixes that you probably don't need... */
+
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+
+  /* IE */
+  -ms-transform: rotate(-90deg);
+
+  /* Opera */
+  -o-transform: rotate(-90deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
 /*==================== MEDIA QUERIES ====================*/
