@@ -1,9 +1,30 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
 /*==================== VARIABLES CSS ====================*/
 :root {
   /*========== Colors ==========*/
-  --background: rgb(34, 49, 37);
   --text-color: #000000;
-  --border: 0.8px solid #000000;
+  --text-color-light: #888b91;
+  --first-color: #4178dc;
+  --second-color: #4178dc;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Righteous", cursive;
+  --h1-font-size: 3.5rem;
+  --h2-font-size: 3.25rem;
+  --h3-font-size: 1.5rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Padding ==========*/
+  --cell-padding: 1.25rem;
 }
 
 /*==================== BASE ====================*/
@@ -15,39 +36,76 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: "Righteous", cursive;
 }
 
 body {
-  margin: 0px;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
   color: var(--text-color);
+  position: fixed;
+  z-index: 1;
+  background: #f6f6f6
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABaBAMAAAA4OgmUAAAAElBMVEUAAAD8+vzs7uz08vT09vTs6uzIy6uqAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAABHFJREFUOI0VVYutwyAMZIUAHQDsDIDtDAB2BmjI23+Vd5WqqGlSON+PFK2rEVk2Hc4+g4MS99VtSNViq8ySjcRTeevR99BjSddGNJVm6vV1lTo1qncnlld3uk0vs7PNoGK2lohpoo9w8UXSnpyje5ufmny/8pLdssqKrWrmOxGblxxzvbijyrWKJRK1125VZ1bs+LJxMtUVFOr9Uhrj69e1kvfiUTABrxF7CFutyTpFyBUfNrlntviyJCEdfB5uUeZa5tqzJ41BsXS+cT5xsV51lOQiJ+uysZqcp1gErx/O/Xke7Z2VwoH6ugFJlsfL/QYpYrWRA2cbt0W/li98/JIcK7HQQ2FgBACcunjnhIF6Yf3uLmvtqti0JlnnPMBYrTyON25pcabdb3nKrYd8hy7noVhTarGuAuIv7FTDsUIafvFSkV1CgmR+ZH4Tq9VMpFiDr+LGckYSlb+wPA0+yCI0D/ZEnT51imJk9t+k8m1Ju4SAMblujZ7J/Fw/jfDry/Ed30NDpEek9yUhYjrG7bXv6Fpm4qwQdoRRO/ts1KOWNFjHfCb+1fipV34Wc5qDzG7qf5NlPf1sfMGK/SaTWJ6jxrCgZ6+kws3JPWaPI3d4bkUCHWaspesPfclQx1Kmjwdnfyttqya17ZqibK3NjmuV7L8kACDM0B5rq5QFcwPBNYul2hWY/CIvcBoywicluUfUE/Oze3mYJNNIecFK66KJMKipzYrdg/snz/ootJ7W5d4KnHAxKHY6Yd+mLF12+t2dnCsCCrrWgodzijEl/PsWaMrSllSLBJez98WES+MAqOhpyUbaYOeXBylDOAJ4awFShL7PXWXF9D9P8J5OKCMca8NLeNdhBsizZNa3SSn5omUrBVQbnyBHCSAS4S6azKW7Nu/GTcSdaEOjZ9kVuweSqd0Pv4nTi7dCR6n2ZuubxuGSLkb9qLmti0vog1FGguFEwfBvLDU5tHWkGGGChPQjRn1xh9wp2uuVEMk+2vNehBqhVKl/OmMq6Xtrp9nHSvdxnlAOdvSNsCNn2P1d2ip5dHs020vYjhK+DSSqc0V74OEyNNiWG9M6sv+xDlt5Q9dtXTy6asQRqn9Fpt1pzPJcoQYAfMBh3mAbw0QubVB/TE4UGayVSsN2jrlarhHY1Ble4rXDV143rHAtZAW9tPq3042g2gIVWbOTpnJjCHsRfZHQflCLI+W72sdXbwVoga2A3RT+WByY5mCR48d9U+h+fnmhX1F+BH/A4DmB/uuBnoYlaC/ic0Rag/7Urv2GdCs4GXT+2uaQgXJHmxGu+4IvkhsEpxf5A4MRqOE+UzmUB+JccuY8lBbcm5yl3pDRJ4racA6BsdTKcgmbhu5GZJioUMrs0Q6Y1tewX+bWYuiuB3HhYfWCltDIOwILccV/o3hAJf3CyR/0tlQSmZ3xBCH0CtflSXTB8+6O1mnL7xTxknacByDvBnFoTRw91DGJvDYZx6SbDP2dHQ9gQIN9owDU6fqdR1Jz1vuvoj137YXgoX98wFmd8/ZTGQAAAABJRU5ErkJggg==);
+}
+
+.dot-one {
+  height: 400px;
+  width: 400px;
+  background: linear-gradient(
+    -30deg,
+    rgba(67, 41, 194, 0.8) 20%,
+    rgba(255, 156, 0, 0.8) 100%
+  );
+  filter: blur(40px);
+  border-radius: 50%;
+  position: fixed;
+  z-index: 2;
+  right: 200px;
+  top: -30px;
+}
+
+main {
+  overflow: hidden;
 }
 
 /*==================== TEXT ====================*/
 
-h1 {
-  font-size: 3.5rem;
+h1,
+h2,
+h3 {
+  color: var(--text-color);
   text-transform: uppercase;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: var(--h2-font-size);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
 }
 
 p {
-  font-size: 0.8rem;
+  font-size: var(--normal-font-size);
   text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
 }
 
 /*==================== Buttons ====================*/
 
 button {
   background: transparent;
-  /* border: none; */
-  font-size: 1.2rem;
-  text-align: left;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
   text-transform: uppercase;
-  padding: 5px;
 }
 
 /*==================== GRID ====================*/
@@ -55,27 +113,29 @@ button {
 .grid {
   width: 100vw;
   height: 100vh;
+  position: fixed;
+  z-index: 3;
   display: grid;
-  grid-template-columns: 50px [col-start] 10fr [col-start] 50px [col-start];
-  grid-template-rows: 60px 100px 75px 4fr 4fr 60px;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 2fr 1.5fr 4fr 4fr 1fr;
 }
 
 .cell {
-  display: flex;
+  padding: var(--cell-padding);
 }
 
 /* cell Boarder Line */
 .cell:not(:nth-child(3n)) {
-  border-right: var(--border);
+  border-right: 1px solid var(--text-color);
 }
 .cell:not(:nth-last-child(-n + 3)) {
-  border-bottom: var(--border);
+  border-bottom: 1px solid var(--text-color);
 }
 
 /*==================== Title ====================*/
 
 .cell-title {
-  display: inherit;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -83,45 +143,40 @@ button {
 /*==================== Intro ====================*/
 
 .cell-intro {
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column wrap;
   padding: 25px;
+  text-align: justify;
 }
 
 .chain {
   font-size: 2rem;
 }
 
-.cell-text {
-  padding-top: 10px;
-  text-align: justify;
-}
-
 /*==================== Links / Buttons ====================*/
 
 .cell-links {
-  justify-content: center;
-  flex-flow: column wrap;
   padding: 25px;
 }
 
-.links-and-code {
+.links-titel {
   display: flex;
-  flex-flow: row;
-  align-items: center;
   justify-content: space-between;
-  padding-top: 25px;
+  align-items: center;
 }
 
-.button-links {
+.links-icons {
+  font-size: 1.4rem;
 }
 
-.codes {
-  position: relative;
-  left: 20px;
-  transform: rotate(-90deg);
-  font-size: 0.5rem;
+.link-buttons {
+  height: 150px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 /*==================== MEDIA QUERIES ====================*/
