@@ -6,14 +6,14 @@
   /*========== Colors ==========*/
   --text-color: #000000;
   --text-color-light: #888b91;
-  --first-color: #4178dc;
-  --second-color: #4178dc;
+  --first-color: #4329c2cc;
+  --second-color: #ff9c00cc;
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Righteous", cursive;
-  --h1-font-size: 3.5rem;
-  --h2-font-size: 3.25rem;
+  --h1-font-size: 3rem;
+  --h2-font-size: 2.5rem;
   --h3-font-size: 1.5rem;
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
@@ -24,7 +24,7 @@
   --font-semi-bold: 600;
 
   /*========== Padding ==========*/
-  --cell-padding: 1.25rem;
+  --cell-padding: 0.8rem 1rem 1rem 1rem;
 }
 
 /*==================== BASE ====================*/
@@ -53,15 +53,29 @@ body {
   width: 400px;
   background: linear-gradient(
     -30deg,
-    rgba(67, 41, 194, 0.8) 20%,
-    rgba(255, 156, 0, 0.8) 100%
+    var(--first-color) 20%,
+    var(--second-color) 90%
   );
+  opacity: 0.6;
   filter: blur(40px);
   border-radius: 50%;
   position: fixed;
   z-index: 2;
   right: 200px;
   top: -30px;
+}
+
+.dot-two {
+  height: 300px;
+  width: 300px;
+  background-color: var(--first-color);
+  opacity: 0.6;
+  filter: blur(40px);
+  border-radius: 50%;
+  position: fixed;
+  z-index: 2;
+  right: -150px;
+  top: 650px;
 }
 
 main {
@@ -94,18 +108,15 @@ p {
   text-transform: uppercase;
 }
 
+/*==================== Buttons & Links ====================*/
+
 a {
-  text-decoration: none;
-}
-
-/*==================== Buttons ====================*/
-
-button {
   background: transparent;
   border: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 /*==================== GRID ====================*/
@@ -116,12 +127,11 @@ button {
   position: fixed;
   z-index: 3;
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-  grid-template-rows: 1fr 2fr 1.5fr 4fr 4fr 1fr;
+  grid-template-columns: 0.6fr 4fr 0.6fr;
+  grid-template-rows: 0.7fr 1.1fr 0.8fr 2.5fr 4fr;
 }
 
 .cell {
-  padding: var(--cell-padding);
 }
 
 /* cell Boarder Line */
@@ -144,39 +154,46 @@ button {
 
 .cell-intro {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-flow: column wrap;
-  padding: 25px;
   text-align: justify;
+  justify-content: space-evenly;
+  padding: var(--cell-padding);
 }
 
 .chain {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  padding: 15px 0px 15px 0px;
+  text-align: justify;
 }
 
 /*==================== Links / Buttons ====================*/
 
 .cell-links {
-  padding: 25px;
+  padding: var(--cell-padding);
 }
 
 .links-titel {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 4.5rem;
 }
 
 .links-icons {
   font-size: 1.4rem;
 }
 
+.links-and-code {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
 .link-buttons {
   height: 150px;
   display: flex;
   flex-flow: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  justify-content: space-between;
 }
 
 /*==================== MEDIA QUERIES ====================*/
