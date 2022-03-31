@@ -42,7 +42,6 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--text-color);
-  position: fixed;
   z-index: 1;
   background: #f6f6f6
     url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABaBAMAAAA4OgmUAAAAElBMVEUAAAD8+vzs7uz08vT09vTs6uzIy6uqAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAABHFJREFUOI0VVYutwyAMZIUAHQDsDIDtDAB2BmjI23+Vd5WqqGlSON+PFK2rEVk2Hc4+g4MS99VtSNViq8ySjcRTeevR99BjSddGNJVm6vV1lTo1qncnlld3uk0vs7PNoGK2lohpoo9w8UXSnpyje5ufmny/8pLdssqKrWrmOxGblxxzvbijyrWKJRK1125VZ1bs+LJxMtUVFOr9Uhrj69e1kvfiUTABrxF7CFutyTpFyBUfNrlntviyJCEdfB5uUeZa5tqzJ41BsXS+cT5xsV51lOQiJ+uysZqcp1gErx/O/Xke7Z2VwoH6ugFJlsfL/QYpYrWRA2cbt0W/li98/JIcK7HQQ2FgBACcunjnhIF6Yf3uLmvtqti0JlnnPMBYrTyON25pcabdb3nKrYd8hy7noVhTarGuAuIv7FTDsUIafvFSkV1CgmR+ZH4Tq9VMpFiDr+LGckYSlb+wPA0+yCI0D/ZEnT51imJk9t+k8m1Ju4SAMblujZ7J/Fw/jfDry/Ed30NDpEek9yUhYjrG7bXv6Fpm4qwQdoRRO/ts1KOWNFjHfCb+1fipV34Wc5qDzG7qf5NlPf1sfMGK/SaTWJ6jxrCgZ6+kws3JPWaPI3d4bkUCHWaspesPfclQx1Kmjwdnfyttqya17ZqibK3NjmuV7L8kACDM0B5rq5QFcwPBNYul2hWY/CIvcBoywicluUfUE/Oze3mYJNNIecFK66KJMKipzYrdg/snz/ootJ7W5d4KnHAxKHY6Yd+mLF12+t2dnCsCCrrWgodzijEl/PsWaMrSllSLBJez98WES+MAqOhpyUbaYOeXBylDOAJ4awFShL7PXWXF9D9P8J5OKCMca8NLeNdhBsizZNa3SSn5omUrBVQbnyBHCSAS4S6azKW7Nu/GTcSdaEOjZ9kVuweSqd0Pv4nTi7dCR6n2ZuubxuGSLkb9qLmti0vog1FGguFEwfBvLDU5tHWkGGGChPQjRn1xh9wp2uuVEMk+2vNehBqhVKl/OmMq6Xtrp9nHSvdxnlAOdvSNsCNn2P1d2ip5dHs020vYjhK+DSSqc0V74OEyNNiWG9M6sv+xDlt5Q9dtXTy6asQRqn9Fpt1pzPJcoQYAfMBh3mAbw0QubVB/TE4UGayVSsN2jrlarhHY1Ble4rXDV143rHAtZAW9tPq3042g2gIVWbOTpnJjCHsRfZHQflCLI+W72sdXbwVoga2A3RT+WByY5mCR48d9U+h+fnmhX1F+BH/A4DmB/uuBnoYlaC/ic0Rag/7Urv2GdCs4GXT+2uaQgXJHmxGu+4IvkhsEpxf5A4MRqOE+UzmUB+JccuY8lBbcm5yl3pDRJ4racA6BsdTKcgmbhu5GZJioUMrs0Q6Y1tewX+bWYuiuB3HhYfWCltDIOwILccV/o3hAJf3CyR/0tlQSmZ3xBCH0CtflSXTB8+6O1mnL7xTxknacByDvBnFoTRw91DGJvDYZx6SbDP2dHQ9gQIN9owDU6fqdR1Jz1vuvoj137YXgoX98wFmd8/ZTGQAAAABJRU5ErkJggg==);
@@ -56,7 +55,7 @@ body {
     var(--first-color) 20%,
     var(--second-color) 90%
   );
-  opacity: 0.6;
+  opacity: 0.7;
   filter: blur(40px);
   border-radius: 50%;
   position: fixed;
@@ -69,7 +68,7 @@ body {
   height: 300px;
   width: 300px;
   background-color: var(--first-color);
-  opacity: 0.6;
+  opacity: 0.7;
   filter: blur(40px);
   border-radius: 50%;
   position: fixed;
@@ -123,9 +122,7 @@ a {
 
 .grid {
   width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 3;
+  z-index: 5;
   display: grid;
   grid-template-columns: 0.6fr 4fr 0.6fr;
   grid-template-rows: 0.7fr 1.1fr 0.8fr 2.5fr 4fr;
