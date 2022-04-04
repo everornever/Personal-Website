@@ -133,7 +133,7 @@ a:visited {
   z-index: 3;
   display: grid;
   grid-template-columns: 0.5fr 4fr 0.5fr;
-  grid-template-rows: 0.2fr 1.1fr 0.8fr 2.5fr 4fr;
+  grid-template-rows: 0.2fr 1.1fr 0.8fr 2.5fr 4fr 0.2fr;
 }
 
 .cell {
