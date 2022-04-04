@@ -24,7 +24,7 @@
   --font-semi-bold: 600;
 
   /*========== Padding ==========*/
-  --cell-padding: 0.8rem 1rem 1rem 1rem;
+  --row-padding: 0.8rem 1rem 1rem 1rem;
 }
 
 /*==================== BASE ====================*/
@@ -42,44 +42,6 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--text-color);
-  z-index: 1;
-  background: #f6f6f6
-    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABaBAMAAAA4OgmUAAAAElBMVEUAAAD8+vzs7uz08vT09vTs6uzIy6uqAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAABHFJREFUOI0VVYutwyAMZIUAHQDsDIDtDAB2BmjI23+Vd5WqqGlSON+PFK2rEVk2Hc4+g4MS99VtSNViq8ySjcRTeevR99BjSddGNJVm6vV1lTo1qncnlld3uk0vs7PNoGK2lohpoo9w8UXSnpyje5ufmny/8pLdssqKrWrmOxGblxxzvbijyrWKJRK1125VZ1bs+LJxMtUVFOr9Uhrj69e1kvfiUTABrxF7CFutyTpFyBUfNrlntviyJCEdfB5uUeZa5tqzJ41BsXS+cT5xsV51lOQiJ+uysZqcp1gErx/O/Xke7Z2VwoH6ugFJlsfL/QYpYrWRA2cbt0W/li98/JIcK7HQQ2FgBACcunjnhIF6Yf3uLmvtqti0JlnnPMBYrTyON25pcabdb3nKrYd8hy7noVhTarGuAuIv7FTDsUIafvFSkV1CgmR+ZH4Tq9VMpFiDr+LGckYSlb+wPA0+yCI0D/ZEnT51imJk9t+k8m1Ju4SAMblujZ7J/Fw/jfDry/Ed30NDpEek9yUhYjrG7bXv6Fpm4qwQdoRRO/ts1KOWNFjHfCb+1fipV34Wc5qDzG7qf5NlPf1sfMGK/SaTWJ6jxrCgZ6+kws3JPWaPI3d4bkUCHWaspesPfclQx1Kmjwdnfyttqya17ZqibK3NjmuV7L8kACDM0B5rq5QFcwPBNYul2hWY/CIvcBoywicluUfUE/Oze3mYJNNIecFK66KJMKipzYrdg/snz/ootJ7W5d4KnHAxKHY6Yd+mLF12+t2dnCsCCrrWgodzijEl/PsWaMrSllSLBJez98WES+MAqOhpyUbaYOeXBylDOAJ4awFShL7PXWXF9D9P8J5OKCMca8NLeNdhBsizZNa3SSn5omUrBVQbnyBHCSAS4S6azKW7Nu/GTcSdaEOjZ9kVuweSqd0Pv4nTi7dCR6n2ZuubxuGSLkb9qLmti0vog1FGguFEwfBvLDU5tHWkGGGChPQjRn1xh9wp2uuVEMk+2vNehBqhVKl/OmMq6Xtrp9nHSvdxnlAOdvSNsCNn2P1d2ip5dHs020vYjhK+DSSqc0V74OEyNNiWG9M6sv+xDlt5Q9dtXTy6asQRqn9Fpt1pzPJcoQYAfMBh3mAbw0QubVB/TE4UGayVSsN2jrlarhHY1Ble4rXDV143rHAtZAW9tPq3042g2gIVWbOTpnJjCHsRfZHQflCLI+W72sdXbwVoga2A3RT+WByY5mCR48d9U+h+fnmhX1F+BH/A4DmB/uuBnoYlaC/ic0Rag/7Urv2GdCs4GXT+2uaQgXJHmxGu+4IvkhsEpxf5A4MRqOE+UzmUB+JccuY8lBbcm5yl3pDRJ4racA6BsdTKcgmbhu5GZJioUMrs0Q6Y1tewX+bWYuiuB3HhYfWCltDIOwILccV/o3hAJf3CyR/0tlQSmZ3xBCH0CtflSXTB8+6O1mnL7xTxknacByDvBnFoTRw91DGJvDYZx6SbDP2dHQ9gQIN9owDU6fqdR1Jz1vuvoj137YXgoX98wFmd8/ZTGQAAAABJRU5ErkJggg==);
-}
-
-.dot-one {
-  height: 300px;
-  width: 300px;
-  background: linear-gradient(
-    -30deg,
-    var(--first-color) 10%,
-    var(--second-color) 90%
-  );
-  opacity: 0.7;
-  filter: blur(40px);
-  border-radius: 50%;
-  position: fixed;
-  z-index: 2;
-  right: 250px;
-  top: -30px;
-  transform: scale(1.1);
-}
-
-.dot-two {
-  height: 300px;
-  width: 300px;
-  background-color: var(--first-color);
-  opacity: 0.5;
-  filter: blur(40px);
-  border-radius: 50%;
-  position: fixed;
-  z-index: 2;
-  right: -150px;
-  top: 650px;
-}
-
-main {
-  overflow: hidden;
 }
 
 /*==================== TEXT ====================*/
@@ -127,75 +89,168 @@ a:visited {
 /*==================== GRID ====================*/
 
 .grid {
-  width: 100vw;
   height: 100vh;
-  position: relative;
-  z-index: 3;
+  background-color: var(--text-color);
   display: grid;
-  grid-template-columns: 0.5fr 4fr 0.5fr;
-  grid-template-rows: 0.2fr 1.1fr 0.8fr 2.5fr 4fr 0.2fr;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+  grid-template-rows: 5% 90% repeat(3, 90%) 30%;
+  gap: 1px;
+  grid-template-areas: 
+  ". . ."
+  ". teaser_section ."
+  ". about_section ."
+  ". portfolio_section ."
+  ". knowledge_section ."
+  ". footer_section .";
+  overflow: scroll;
 }
 
-.cell {
+.grid > * {
+  background: #f6f6f6 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABaBAMAAAA4OgmUAAAAElBMVEUAAAD8+vzs7uz08vT09vTs6uzIy6uqAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAABHFJREFUOI0VVYutwyAMZIUAHQDsDIDtDAB2BmjI23+Vd5WqqGlSON+PFK2rEVk2Hc4+g4MS99VtSNViq8ySjcRTeevR99BjSddGNJVm6vV1lTo1qncnlld3uk0vs7PNoGK2lohpoo9w8UXSnpyje5ufmny/8pLdssqKrWrmOxGblxxzvbijyrWKJRK1125VZ1bs+LJxMtUVFOr9Uhrj69e1kvfiUTABrxF7CFutyTpFyBUfNrlntviyJCEdfB5uUeZa5tqzJ41BsXS+cT5xsV51lOQiJ+uysZqcp1gErx/O/Xke7Z2VwoH6ugFJlsfL/QYpYrWRA2cbt0W/li98/JIcK7HQQ2FgBACcunjnhIF6Yf3uLmvtqti0JlnnPMBYrTyON25pcabdb3nKrYd8hy7noVhTarGuAuIv7FTDsUIafvFSkV1CgmR+ZH4Tq9VMpFiDr+LGckYSlb+wPA0+yCI0D/ZEnT51imJk9t+k8m1Ju4SAMblujZ7J/Fw/jfDry/Ed30NDpEek9yUhYjrG7bXv6Fpm4qwQdoRRO/ts1KOWNFjHfCb+1fipV34Wc5qDzG7qf5NlPf1sfMGK/SaTWJ6jxrCgZ6+kws3JPWaPI3d4bkUCHWaspesPfclQx1Kmjwdnfyttqya17ZqibK3NjmuV7L8kACDM0B5rq5QFcwPBNYul2hWY/CIvcBoywicluUfUE/Oze3mYJNNIecFK66KJMKipzYrdg/snz/ootJ7W5d4KnHAxKHY6Yd+mLF12+t2dnCsCCrrWgodzijEl/PsWaMrSllSLBJez98WES+MAqOhpyUbaYOeXBylDOAJ4awFShL7PXWXF9D9P8J5OKCMca8NLeNdhBsizZNa3SSn5omUrBVQbnyBHCSAS4S6azKW7Nu/GTcSdaEOjZ9kVuweSqd0Pv4nTi7dCR6n2ZuubxuGSLkb9qLmti0vog1FGguFEwfBvLDU5tHWkGGGChPQjRn1xh9wp2uuVEMk+2vNehBqhVKl/OmMq6Xtrp9nHSvdxnlAOdvSNsCNn2P1d2ip5dHs020vYjhK+DSSqc0V74OEyNNiWG9M6sv+xDlt5Q9dtXTy6asQRqn9Fpt1pzPJcoQYAfMBh3mAbw0QubVB/TE4UGayVSsN2jrlarhHY1Ble4rXDV143rHAtZAW9tPq3042g2gIVWbOTpnJjCHsRfZHQflCLI+W72sdXbwVoga2A3RT+WByY5mCR48d9U+h+fnmhX1F+BH/A4DmB/uuBnoYlaC/ic0Rag/7Urv2GdCs4GXT+2uaQgXJHmxGu+4IvkhsEpxf5A4MRqOE+UzmUB+JccuY8lBbcm5yl3pDRJ4racA6BsdTKcgmbhu5GZJioUMrs0Q6Y1tewX+bWYuiuB3HhYfWCltDIOwILccV/o3hAJf3CyR/0tlQSmZ3xBCH0CtflSXTB8+6O1mnL7xTxknacByDvBnFoTRw91DGJvDYZx6SbDP2dHQ9gQIN9owDU6fqdR1Jz1vuvoj137YXgoX98wFmd8/ZTGQAAAABJRU5ErkJggg==);
+  
 }
 
-/* cell Boarder Line */
-.cell:not(:nth-child(3n)) {
-  border-right: 1px solid var(--text-color);
-}
-.cell:not(:nth-last-child(-n + 3)) {
-  border-bottom: 1px solid var(--text-color);
+.row {
+  border-bottom: 1px solid #000000;
 }
 
-/*==================== Title ====================*/
 
-.cell-title {
+/*==================== Teaser Section ====================*/
+
+.teaser_section {
+  grid-area: teaser_section;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 2fr 4fr;
+  gap: 1px;
+  /* grid-template-areas:
+    "teaser_row"
+    "teaser_row"
+    "teaser_row"
+    "teaser_row"; */
+}
+
+.teaser_title {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: var(--row-padding);
 }
 
-/*==================== Intro ====================*/
-
-.cell-intro {
+/*----------*/
+      
+.teaser_intro {
   display: flex;
   flex-flow: column wrap;
-  text-align: justify;
+  text-align: left;
   justify-content: space-evenly;
-  padding: var(--cell-padding);
+  align-items: flex-start;
+  padding: var(--row-padding);
 }
 
-.chain {
+.teaser_bar {
+  width: 90%;
+  height: 20px;
+  border: 1px solid #000000;
+  border-radius: 2em;
+}
+
+.teaser_chain {
   font-size: 1.5rem;
   padding: 15px 0px 15px 0px;
   text-align: center;
 }
 
-/*==================== Links / Buttons ====================*/
+/*----------*/
 
-.cell-links {
-  padding: var(--cell-padding);
+.teaser_info {
+padding: var(--row-padding);
 }
 
-.links-titel {
+.teaser_icons {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 4.5rem;
 }
 
-.links-and-code {
+.teaser_links {
+  height: 60%;
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-top: 30px;
 }
 
-.link-buttons {
-  height: 150px;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
+.teaser_buttons {
+height: 100%;
+display: flex;
+flex-flow: column;
+justify-content: space-between
 }
+
+
+
+/*==================== About Section ====================*/
+
+.about_section {
+  grid-area: about_section;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0px;
+  /* grid-template-areas:
+    "teaser_row"
+    "teaser_row"
+    "teaser_row"
+    "teaser_row"; */
+}
+
+/*==================== Portfolio Section ====================*/
+
+.portfolio_section {
+  grid-area: portfolio_section;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0px;
+  /* grid-template-areas:
+    "teaser_row"
+    "teaser_row"
+    "teaser_row"
+    "teaser_row"; */
+}
+
+/*==================== Knowledge Section ====================*/
+
+.knowledge_section {
+  grid-area: knowledge_section;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0px;
+  /* grid-template-areas:
+    "teaser_row"
+    "teaser_row"
+    "teaser_row"
+    "teaser_row"; */
+}
+
+/*==================== Footer Section ====================*/
+
+.footer_section {
+  grid-area: footer_section;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0px;
+  /* grid-template-areas:
+    "teaser_row"
+    "teaser_row"
+    "teaser_row"
+    "teaser_row"; */
+}
+
+
+
 
 /*==================== MEDIA QUERIES ====================*/
 /* Root Fonts */
