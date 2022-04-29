@@ -1,30 +1,35 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@400;500;700&display=swap");
 
 /*==================== VARIABLES CSS ====================*/
+/*-------- Styles for devices between 350px - ?? --------*/
 :root {
   /*========== Colors ==========*/
   --text-color: #000000;
   --text-color-light: #888b91;
-  --first-color: #ff0000;
-  --second-color: #2b00ff;
+
+  --first-color: rgb(43, 0, 255);
+  --second-color: rgb(255, 0, 0);
+
+  --border: 1px solid #000000;
 
   /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: "Righteous", cursive;
-  --h1-font-size: 3rem;
-  --h2-font-size: 2.5rem;
-  --h3-font-size: 1.5rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
+  --body-font: "Expletus Sans", cursive;
+
+  --teaser-size: 3.375rem; /*54px*/
+  --header-size: 2rem; /*32px*/
+  --title-size: 1.125rem; /*18px*/
+  --button-size: 0.875rem; /*14px*/
+  --button-small-size: 0.75rem; /*12px*/
+  --text-size: 0.75rem; /*12px*/
+  --text-small-size: 0.625rem; /*10px*/
 
   /*========== Font weight ==========*/
-  --font-medium: 500;
-  --font-semi-bold: 600;
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
 
-  /*========== Padding ==========*/
-  --cell-padding: 0.8rem 1rem 1rem 1rem;
+  --cell-padding: 1rem;
 }
 
 /*==================== BASE ====================*/
@@ -39,73 +44,21 @@ html {
 }
 
 body {
+  overscroll-behavior: none;
   font-family: var(--body-font);
-  font-size: var(--normal-font-size);
+  text-transform: uppercase;
   color: var(--text-color);
-  z-index: 1;
   background: #f6f6f6
     url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABaBAMAAAA4OgmUAAAAElBMVEUAAAD8+vzs7uz08vT09vTs6uzIy6uqAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAABHFJREFUOI0VVYutwyAMZIUAHQDsDIDtDAB2BmjI23+Vd5WqqGlSON+PFK2rEVk2Hc4+g4MS99VtSNViq8ySjcRTeevR99BjSddGNJVm6vV1lTo1qncnlld3uk0vs7PNoGK2lohpoo9w8UXSnpyje5ufmny/8pLdssqKrWrmOxGblxxzvbijyrWKJRK1125VZ1bs+LJxMtUVFOr9Uhrj69e1kvfiUTABrxF7CFutyTpFyBUfNrlntviyJCEdfB5uUeZa5tqzJ41BsXS+cT5xsV51lOQiJ+uysZqcp1gErx/O/Xke7Z2VwoH6ugFJlsfL/QYpYrWRA2cbt0W/li98/JIcK7HQQ2FgBACcunjnhIF6Yf3uLmvtqti0JlnnPMBYrTyON25pcabdb3nKrYd8hy7noVhTarGuAuIv7FTDsUIafvFSkV1CgmR+ZH4Tq9VMpFiDr+LGckYSlb+wPA0+yCI0D/ZEnT51imJk9t+k8m1Ju4SAMblujZ7J/Fw/jfDry/Ed30NDpEek9yUhYjrG7bXv6Fpm4qwQdoRRO/ts1KOWNFjHfCb+1fipV34Wc5qDzG7qf5NlPf1sfMGK/SaTWJ6jxrCgZ6+kws3JPWaPI3d4bkUCHWaspesPfclQx1Kmjwdnfyttqya17ZqibK3NjmuV7L8kACDM0B5rq5QFcwPBNYul2hWY/CIvcBoywicluUfUE/Oze3mYJNNIecFK66KJMKipzYrdg/snz/ootJ7W5d4KnHAxKHY6Yd+mLF12+t2dnCsCCrrWgodzijEl/PsWaMrSllSLBJez98WES+MAqOhpyUbaYOeXBylDOAJ4awFShL7PXWXF9D9P8J5OKCMca8NLeNdhBsizZNa3SSn5omUrBVQbnyBHCSAS4S6azKW7Nu/GTcSdaEOjZ9kVuweSqd0Pv4nTi7dCR6n2ZuubxuGSLkb9qLmti0vog1FGguFEwfBvLDU5tHWkGGGChPQjRn1xh9wp2uuVEMk+2vNehBqhVKl/OmMq6Xtrp9nHSvdxnlAOdvSNsCNn2P1d2ip5dHs020vYjhK+DSSqc0V74OEyNNiWG9M6sv+xDlt5Q9dtXTy6asQRqn9Fpt1pzPJcoQYAfMBh3mAbw0QubVB/TE4UGayVSsN2jrlarhHY1Ble4rXDV143rHAtZAW9tPq3042g2gIVWbOTpnJjCHsRfZHQflCLI+W72sdXbwVoga2A3RT+WByY5mCR48d9U+h+fnmhX1F+BH/A4DmB/uuBnoYlaC/ic0Rag/7Urv2GdCs4GXT+2uaQgXJHmxGu+4IvkhsEpxf5A4MRqOE+UzmUB+JccuY8lBbcm5yl3pDRJ4racA6BsdTKcgmbhu5GZJioUMrs0Q6Y1tewX+bWYuiuB3HhYfWCltDIOwILccV/o3hAJf3CyR/0tlQSmZ3xBCH0CtflSXTB8+6O1mnL7xTxknacByDvBnFoTRw91DGJvDYZx6SbDP2dHQ9gQIN9owDU6fqdR1Jz1vuvoj137YXgoX98wFmd8/ZTGQAAAABJRU5ErkJggg==);
 }
 
-.dot-one {
-  height: 300px;
-  width: 300px;
-  background: linear-gradient(
-    -30deg,
-    var(--first-color) 10%,
-    var(--second-color) 90%
-  );
-  opacity: 0.7;
-  filter: blur(40px);
-  border-radius: 50%;
-  position: fixed;
-  z-index: 2;
-  right: 250px;
-  top: -30px;
-  transform: scale(1.1);
-}
-
-.dot-two {
-  height: 300px;
-  width: 300px;
-  background-color: var(--first-color);
-  opacity: 0.5;
-  filter: blur(40px);
-  border-radius: 50%;
-  position: fixed;
-  z-index: 2;
-  right: -150px;
-  top: 650px;
-}
-
 main {
   overflow: hidden;
-}
-
-/*==================== TEXT ====================*/
-
-h1,
-h2,
-h3 {
-  color: var(--text-color);
-  text-transform: uppercase;
-}
-
-h1 {
-  font-size: var(--h1-font-size);
-}
-
-h2 {
-  font-size: var(--h2-font-size);
-}
-
-h3 {
-  font-size: var(--h3-font-size);
-}
-
-p {
-  font-size: var(--normal-font-size);
-  text-transform: uppercase;
+  background-image: url("/Assets/Image/blob1.svg"),
+    url("/Assets/Image/blob2.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: local, local;
+  background-position: -90px -60px, 150px 1150px;
 }
 
 /*==================== Buttons & Links ====================*/
@@ -113,105 +66,309 @@ p {
 a {
   background: transparent;
   border: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
   text-decoration: none;
-  color: var(--text-color);
 }
 
 a:visited {
-  color: var(--second-color);
+  color: inherit;
 }
 
-/*==================== GRID ====================*/
+/*==================== MAIN GRID ====================*/
 
 .grid {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  z-index: 3;
+  width: 100%;
+  height: 100%;
   display: grid;
-  grid-template-columns: 0.5fr 4fr 0.5fr;
-  grid-template-rows: 0.2fr 1.1fr 0.8fr 2.5fr 4fr;
-}
-
-.cell {
+  grid-template-columns: 0.2fr 2fr 0.2fr;
+  grid-template-rows: 40px repeat(3, auto) 200px;
+  grid-template-areas:
+    ". . ."
+    ". teaser_section ."
+    ". about_section ."
+    ". portfolio_section ."
+    ". footer_section .";
 }
 
 /* cell Boarder Line */
 .cell:not(:nth-child(3n)) {
-  border-right: 1px solid var(--text-color);
+  border-right: var(--border);
 }
 .cell:not(:nth-last-child(-n + 3)) {
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: var(--border);
 }
 
-/*==================== Title ====================*/
+/*==================== Teaser Section ====================*/
 
-.cell-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.teaser_section {
+  grid-area: teaser_section;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, autofit);
 }
 
-/*==================== Intro ====================*/
+.teaser_title_one {
+  text-align: start;
+  padding: 1rem 0.8rem;
+  border-bottom: var(--border);
+  font-weight: var(--bold);
+  font-size: var(--teaser-size);
+}
 
-.cell-intro {
+.teaser_title_two {
+  text-align: start;
+  padding: 0.3rem 0.8rem;
+  border-bottom: var(--border);
+  font-weight: var(--bold);
+  font-size: var(--teaser-size);
+}
+
+.teaser_title_three {
+  text-align: start;
+  padding: 0.3rem 0.8rem;
+  font-size: var(--teaser-size);
+  font-weight: var(--medium);
+  text-transform: capitalize;
+}
+
+/*----------*/
+
+.teaser_intro {
   display: flex;
   flex-flow: column wrap;
-  text-align: justify;
   justify-content: space-evenly;
-  padding: var(--cell-padding);
+  align-items: flex-start;
+  padding: 0.5rem 0.8rem 2rem;
+  border-bottom: var(--border);
+  font-size: var(--text-size);
+  font-weight: var(--regular);
 }
 
-.chain {
+.teaser_bar {
+  width: 90%;
+  height: 15px;
+  border: var(--border);
+  border-radius: 2em;
+}
+
+.teaser_chain {
+  padding: 10px 0px 15px 0px;
+  font-size: var(--button-size);
+}
+
+/*----------*/
+
+.teaser_icons {
+  padding: 1rem 0.8rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--bold);
+  font-size: var(--title-size);
+}
+
+.teaser_logo {
+  font-size: 3.3rem;
+  line-height: 1;
+}
+
+.teaser_globe {
+  width: 65px;
+  height: auto;
+}
+
+/*----------*/
+
+.teaser_links {
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.teaser_buttons {
+  display: flex;
+  flex-flow: column;
+  font-size: var(--button-size);
+  justify-content: space-between;
+}
+
+.teaser_buttons * {
+  color: inherit;
+}
+
+.teaser_barcode {
+  width: 50px;
+  height: 150px;
+  background-image: url(/Assets/Image/barcode.png);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 150px;
+}
+
+/*==================== About Section ====================*/
+
+.about_section {
+  grid-area: about_section;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+.about_bio {
+  padding: 1rem 0.8rem;
+}
+
+.about_title {
+  font-size: var(--header-size);
+  font-weight: var(--medium);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.about_text {
+  padding-bottom: 1rem;
+  font-size: var(--text-size);
+  font-weight: var(--regular);
+}
+
+.about_contact {
+  font-size: var(--button-small-size);
+  font-weight: var(--bold);
+}
+
+/*==================== Portfolio Section ====================*/
+
+.portfolio_section {
+  grid-area: portfolio_section;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 250px);
+}
+
+.portfolio_section > *:last-child {
+  border-bottom: none;
+}
+
+.portfolio_header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 1rem 0.8rem;
+  border-bottom: var(--border);
+}
+
+.glyph {
+  width: 200px;
+  height: 60px;
+  background: repeating-linear-gradient(
+    135deg,
+    #222,
+    #222 2px,
+    rgba(255, 0, 0, 0) 2px,
+    rgba(255, 0, 0, 0) 6px
+  );
+}
+
+.portfolio_header_title {
+  font-size: var(--header-size);
+  font-weight: var(--medium);
+}
+
+.portfolio_project {
+  padding: 1.5rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: var(--border);
+}
+
+.project_title {
+  font-size: var(--title-size);
+  padding-bottom: 1rem;
+}
+
+.project_description {
+  font-size: var(--text-size);
+  padding-bottom: 1rem;
+}
+
+.project_tech {
   font-size: 1.5rem;
-  padding: 15px 0px 15px 0px;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tech_group {
+  text-align: center;
+  padding-right: 1rem;
+}
+
+.tech_name {
+  font-size: var(--text-small-size);
+}
+
+.project_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project_date {
+  font-size: var(--text-size);
+}
+
+.project_link {
+  font-size: var(--text-size);
+  font-weight: var(--bold);
+  color: inherit;
+}
+
+/*==================== Footer Section ====================*/
+
+.footer_section {
+  grid-area: footer_section;
+  padding: 1rem 0.8rem;
+  background-color: var(--text-color);
+  color: white;
   text-align: center;
 }
 
-/*==================== Links / Buttons ====================*/
-
-.cell-links {
-  padding: var(--cell-padding);
+.footer {
+  background-color: var(--text-color);
 }
 
-.links-titel {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 4.5rem;
+.footer_button {
+  font-size: var(--teaser-size);
+  padding: 1rem;
 }
 
-.links-and-code {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
+.footer_thanks {
+  font-size: var(--text-size);
+  padding-bottom: 2rem;
 }
 
-.link-buttons {
-  height: 150px;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
+.footer_privacy {
+  font-size: var(--text-small-size);
 }
 
 /*==================== MEDIA QUERIES ====================*/
-/* Root Fonts */
-@media screen and (min-width: 968px) {
-}
+
+/******* MEDIA QUERIES *******/
 
 /* For small devices */
 @media screen and (max-width: 350px) {
 }
+
 /* For medium devices */
 @media screen and (min-width: 568px) {
 }
-/* For medium devices */
+
+/* For large devices */
 @media screen and (min-width: 768px) {
 }
 
-/* For large devices */
+/* For desktop devices */
 @media screen and (min-width: 1024px) {
 }
