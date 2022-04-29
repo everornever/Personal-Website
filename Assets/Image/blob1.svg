@@ -1,6 +1,6 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
 <defs>
-    <filter id="f1" x="0" y="0">
+    <filter id="f1" x="-50%" y="-50%" width="250%" height="250%">
       <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
     </filter>
     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -8,5 +8,5 @@
       <stop offset="100%" style="stop-color:rgb(255, 0, 0);stop-opacity:1" />
     </linearGradient>
   </defs>
-  <path fill="url(#grad1)" d="M61,-52.8C70.5,-36.7,63.9,-11.8,55.5,7.7C47.1,27.3,37,41.5,22,50.5C7,59.6,-12.8,63.6,-30.9,57.5C-48.9,51.3,-65.3,35,-71.6,14.4C-77.9,-6.2,-74,-31.1,-60.4,-48.1C-46.8,-65.2,-23.4,-74.4,1.2,-75.3C25.7,-76.2,51.4,-68.9,61,-52.8Z" transform="translate(100 100)" filter="url(#f1)" opacity="0.5" />
+  <path fill="url(#grad1)" d="M61,-52.8C70.5,-36.7,63.9,-11.8,55.5,7.7C47.1,27.3,37,41.5,22,50.5C7,59.6,-12.8,63.6,-30.9,57.5C-48.9,51.3,-65.3,35,-71.6,14.4C-77.9,-6.2,-74,-31.1,-60.4,-48.1C-46.8,-65.2,-23.4,-74.4,1.2,-75.3C25.7,-76.2,51.4,-68.9,61,-52.8Z" transform="translate(100 100)" filter="url(#f1)" opacity="0.4" />
 </svg>

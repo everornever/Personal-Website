@@ -54,10 +54,11 @@ body {
 
 main {
   overflow: hidden;
-  background-image: url("/Assets/Image/blob1.svg");
-  background-repeat: no-repeat;
-  background-attachment: local;
-  background-position: -90px -60px;
+  background-image: url("/Assets/Image/blob1.svg"),
+    url("/Assets/Image/blob2.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: local, local;
+  background-position: -90px -60px, 150px 1150px;
 }
 
 /*==================== Buttons & Links ====================*/
