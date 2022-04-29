@@ -321,6 +321,7 @@ a:visited {
 .project_link {
   font-size: var(--text-size);
   font-weight: var(--bold);
+  color: inherit;
 }
 
 /*==================== Footer Section ====================*/
