@@ -32,6 +32,19 @@
   --cell-padding: 1rem;
 }
 
+/* For medium devices */
+@media screen and (min-width: 568px) {
+  :root {
+    --teaser-size: 4.5rem; /*54px*/
+    --header-size: 2.25rem; /*36px*/
+    --title-size: 2rem; /*32px*/
+    --button-size: 1.125rem; /*18px*/
+    --button-small-size: 0.875rem; /*12px*/
+    --text-size: 0.875rem; /*14px*/
+    --text-small-size: 0.75rem; /*10px*/
+  }
+}
+
 /*==================== BASE ====================*/
 * {
   box-sizing: border-box;
