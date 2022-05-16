@@ -35,7 +35,20 @@
 /* For medium devices */
 @media screen and (min-width: 568px) {
   :root {
-    --teaser-size: 4.5rem; /*54px*/
+    --teaser-size: 4rem; /*54px*/
+    --header-size: 2.25rem; /*36px*/
+    --title-size: 1.5rem; /*32px*/
+    --button-size: 1.125rem; /*18px*/
+    --button-small-size: 0.875rem; /*12px*/
+    --text-size: 0.875rem; /*14px*/
+    --text-small-size: 0.75rem; /*10px*/
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 768px) {
+  :root {
+    --teaser-size: 4rem; /*54px*/
     --header-size: 2.25rem; /*36px*/
     --title-size: 1.5rem; /*32px*/
     --button-size: 1.125rem; /*18px*/
@@ -111,10 +124,20 @@ a:visited {
     ". footer_section .";
 }
 
+/* ####### Media Querrys ####### */
+/* For medium devices */
+@media screen and (min-width: 568px) {
+  .grid {
+    grid-template-columns: 0.3fr 2fr 0.3fr;
+  }
+}
+/* ####### Media Querrys END ####### */
+
 /* cell Boarder Line */
 .cell:not(:nth-child(3n)) {
   border-right: var(--border);
 }
+
 .cell:not(:nth-last-child(-n + 3)) {
   border-bottom: var(--border);
 }
@@ -450,10 +473,10 @@ a:visited {
 @media screen and (min-width: 568px) {
   .portfolio_section {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 350px);
+    grid-template-rows: 250px repeat(2, 350px);
   }
 
-  .portfolio_section :nth-child(2n) {
+  .portfolio_project:nth-child(2n) {
     border-right: var(--border);
   }
 
@@ -502,16 +525,6 @@ a:visited {
 }
 
 /*==================== MEDIA QUERIES ====================*/
-
-/******* MEDIA QUERIES *******/
-
-/* For small devices */
-@media screen and (max-width: 350px) {
-}
-
-/* For medium devices */
-@media screen and (min-width: 568px) {
-}
 
 /* For large devices */
 @media screen and (min-width: 768px) {
